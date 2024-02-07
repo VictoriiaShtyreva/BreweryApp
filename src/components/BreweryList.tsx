@@ -1,24 +1,18 @@
 import { Props } from "../misc/type";
-import { Card, CardContent, Typography, Link } from "@mui/material";
+import { Box, Grid } from "@mui/material";
+import BreweryCard from "./BreweryCard";
 
 const BreweryList = ({ breweries }: Props) => {
   return (
-    <div>
-      {breweries.map((brewery) => (
-        <Card key={brewery.id}>
-          <CardContent>
-            <Typography variant="h5">{brewery.name}</Typography>
-            <Typography variant="body2">{brewery.brewery_type}</Typography>
-            <Typography variant="body2">
-              {brewery.city}, {brewery.state}
-            </Typography>
-            <Link href={brewery.website_url} target="_blank" underline="none">
-              Visit Website
-            </Link>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+    <Box>
+      <Grid container spacing={4}>
+        {breweries.map((brewery) => (
+          <Grid item key={brewery.id} xs={10} sm={6} md={4} lg={3}>
+            <BreweryCard brewery={brewery} />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 
