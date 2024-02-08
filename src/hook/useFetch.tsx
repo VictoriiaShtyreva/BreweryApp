@@ -3,7 +3,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 
 export default function useFetch<T>(url: string) {
   //States for data, loading, error
-  const [data, setData] = useState<T[]>([]);
+  const [data, setData] = useState<T>();
   const [loading, setIsLoading] = useState(true);
   const [error, setIsError] = useState("");
 

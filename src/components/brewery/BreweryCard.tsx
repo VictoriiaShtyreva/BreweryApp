@@ -7,10 +7,10 @@ import {
   Box,
 } from "@mui/material";
 import PlaceIcon from "@mui/icons-material/Place";
-import { Data } from "../../misc/type";
+import { BreweryCardProps } from "../../misc/type";
 import { Link } from "react-router-dom";
 
-const BreweryCard = ({ brewery }: { brewery: Data }) => {
+const BreweryCard = ({ brewery }: BreweryCardProps) => {
   return (
     <Card sx={{ width: "100%", height: "100%", bgcolor: "#ebddc6" }}>
       <CardContent
@@ -31,7 +31,7 @@ const BreweryCard = ({ brewery }: { brewery: Data }) => {
           <PlaceIcon fontSize="small" sx={{ mr: 1 }} />
           <Typography variant="body2">{brewery.address_1}</Typography>
         </Box>
-        <Link to={`/brewery/${brewery.id}`}>
+        <Link to={`/breweries/${brewery.id}`}>
           <Button>View Details</Button>
         </Link>
       </CardContent>

@@ -27,3 +27,13 @@ export type Props = {
 export type SearchBarProps = {
   onSearch: (query: string) => void;
 };
+
+//BreweryCardProps
+export type BreweryCardProps = {
+  brewery: Data;
+};
+
+//BreweryDetailProps
+export type BreweryDetailProps = {
+  id: string | undefined;
+};

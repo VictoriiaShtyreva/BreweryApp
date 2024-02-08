@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
-import BreweryDetailsPage from "./pages/BreweryDetailsPage";
+import BreweryPage from "./pages/BreweryPage";
 
 // Define the routes using createBrowserRouter
 const router = createBrowserRouter([
-  { path: "/brewery", element: <Home /> },
-  { path: "/brewery/:id", element: <BreweryDetailsPage /> },
+  { path: "/breweries", element: <Home /> },
+  { path: "/breweries/:id", element: <BreweryPage /> },
 ]);
 
 function App() {
