@@ -1,4 +1,4 @@
-import { Props } from "../misc/type";
+import { Props } from "../../misc/type";
 import { Box, Grid } from "@mui/material";
 import BreweryCard from "./BreweryCard";
 
@@ -7,7 +7,7 @@ const BreweryList = ({ breweries }: Props) => {
     <Box>
       <Grid container spacing={4}>
         {breweries.map((brewery) => (
-          <Grid item key={brewery.id} xs={10} sm={6} md={4} lg={3}>
+          <Grid item key={brewery.id} xs={8} sm={6} md={4} lg={3}>
             <BreweryCard brewery={brewery} />
           </Grid>
         ))}

@@ -7,34 +7,33 @@ import {
   Box,
 } from "@mui/material";
 import PlaceIcon from "@mui/icons-material/Place";
-import SportsBarIcon from "@mui/icons-material/SportsBar";
-import { Data } from "../misc/type";
+import { Data } from "../../misc/type";
+import { Link } from "react-router-dom";
 
 const BreweryCard = ({ brewery }: { brewery: Data }) => {
   return (
-    <Card>
+    <Card sx={{ width: "100%", height: "100%", bgcolor: "#ebddc6" }}>
       <CardContent
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          width: "100%",
-          height: "100%",
-          padding: 1,
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-          <SportsBarIcon fontSize="small" sx={{ mr: 1 }} />
-          <Typography variant="h6">{brewery.name}</Typography>
-        </Box>
-        <Chip label={brewery.brewery_type} variant="outlined" sx={{ mb: 1 }} />
+        <Typography variant="h6">{brewery.name}</Typography>
+        <Chip
+          label={brewery.brewery_type}
+          variant="outlined"
+          color={brewery.brewery_type === "closed" ? "error" : "primary"}
+          sx={{ mb: 1 }}
+        />
         <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
           <PlaceIcon fontSize="small" sx={{ mr: 1 }} />
           <Typography variant="body2">{brewery.address_1}</Typography>
         </Box>
-        <Button href={brewery.website_url} target="_blank" sx={{ mt: 1 }}>
-          Visit Website
-        </Button>
+        <Link to={`/brewery/${brewery.id}`}>
+          <Button>View Details</Button>
+        </Link>
       </CardContent>
     </Card>
   );

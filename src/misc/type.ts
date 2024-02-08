@@ -22,3 +22,8 @@ export type Data = {
 export type Props = {
   breweries: Data[];
 };
+
+//Header and SearchBarProps
+export type SearchBarProps = {
+  onSearch: (query: string) => void;
+};
