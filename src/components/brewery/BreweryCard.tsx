@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const BreweryCard = ({ brewery }: BreweryCardProps) => {
   return (
-    <Card sx={{ width: "100%", height: "100%", bgcolor: "#ebddc6" }}>
+    <Card sx={{ width: "100%", height: "100%", bgcolor: "#f1b450" }}>
       <CardContent
         sx={{
           display: "flex",
@@ -32,7 +32,7 @@ const BreweryCard = ({ brewery }: BreweryCardProps) => {
           <Typography variant="body2">{brewery.address_1}</Typography>
         </Box>
         <Link to={`/breweries/${brewery.id}`}>
-          <Button>View Details</Button>
+          <Button variant="outlined">View Details</Button>
         </Link>
       </CardContent>
     </Card>

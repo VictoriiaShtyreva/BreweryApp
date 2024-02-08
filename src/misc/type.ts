@@ -10,8 +10,8 @@ export type Data = {
   state_province: string;
   postal_code: string;
   country: string;
-  longitude: number;
-  latitude: number;
+  longitude: string;
+  latitude: string;
   phone: string;
   website_url: string;
   state: string;
