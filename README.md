@@ -44,7 +44,7 @@ To run this project locally, follow these steps:
 
 ## Deployment
 
-<!-- This project is deployed using [Your Deployment Platform]. You can access the live version of the application [here](#). -->
+<This project is deployed using [Vercel]. You can access the live version of the application [here](https://integrifybreweryapp-775wgahz7-victoriiashtyrevas-projects.vercel.app/breweries). 
 
 ## Contributors
 
