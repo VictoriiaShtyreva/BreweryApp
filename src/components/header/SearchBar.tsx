@@ -12,13 +12,13 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 
 import { Data, SearchBarProps } from "../../misc/type";
-import useFetchByName from "../../hook/useFetchByName";
+import useFetchName from "../../hook/useFetchName";
 
 const SearchBar = ({ onSearch }: SearchBarProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<Data[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const { data: suggestionsData, loading, error } = useFetchByName(searchQuery);
+  const { data: suggestionsData, loading, error } = useFetchName(searchQuery);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);

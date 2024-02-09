@@ -6,10 +6,10 @@ import { Data } from "../misc/type";
 import Header from "../components/header/Header";
 import BreweryList from "../components/brewery/BreweryList";
 import Footer from "../components/footer/Footer";
-import useFetchByName from "../hook/useFetchByName";
 import SortByType from "../components/brewery/SortByType";
 import useFetchSort from "../hook/useFetchSort";
 import ContactForm from "../components/form/ContactForm";
+import useFetchName from "../hook/useFetchName";
 
 //Endpoint for fetching all breweries
 const url = "https://api.openbrewerydb.org/v1/breweries";
@@ -28,7 +28,7 @@ const Home = () => {
   //State for query
   const [searchQuery, setSearchQuery] = useState("");
   // Fetch data based on search query
-  const { data, loading, error } = useFetchByName(searchQuery);
+  const { data, loading, error } = useFetchName(searchQuery);
   //Pagination state
   const [currentPage, setCurrentPage] = useState(1);
 

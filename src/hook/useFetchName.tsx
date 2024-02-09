@@ -3,7 +3,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 
 import { Data } from "../misc/type";
 
-const useFetchByName = (name: string) => {
+const useFetchName = (name: string) => {
   const [data, setData] = useState<Data[]>([]);
   const [loading, setIsLoading] = useState(true);
   const [error, setIsError] = useState("");
@@ -24,4 +24,4 @@ const useFetchByName = (name: string) => {
   return { data, loading, error };
 };
 
-export default useFetchByName;
+export default useFetchName;
