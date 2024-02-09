@@ -5,7 +5,7 @@ import BreweryPage from "./pages/BreweryPage";
 
 // Define the routes using createBrowserRouter
 const router = createBrowserRouter([
-  { path: "/breweries", element: <Home /> },
+  { path: "/", element: <Home /> },
   { path: "/breweries/:id", element: <BreweryPage /> },
 ]);
 
