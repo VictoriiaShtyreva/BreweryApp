@@ -40,7 +40,7 @@ To run this project locally, follow these steps:
 1. Clone this repository.
 2. Install dependencies using `npm install`.
 3. Start the development server using `npm start`.
-4. Open [http://localhost:3000](http://localhost:3000/breweries) in your browser to view the application.
+4. Open `http://localhost:3000/breweries` in your browser to view the application.
 
 ## Deployment
 
