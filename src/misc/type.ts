@@ -23,9 +23,14 @@ export type Props = {
   breweries: Data[];
 };
 
-//Header and SearchBarProps
+//SearchBarProps
 export type SearchBarProps = {
   onSearch: (query: string) => void;
+};
+
+//SortByTypeProps
+export type SortByTypeProps = {
+  onSelectSortByType: (type: string) => void;
 };
 
 //BreweryCardProps
@@ -36,4 +41,18 @@ export type BreweryCardProps = {
 //BreweryDetailProps
 export type BreweryDetailProps = {
   id: string | undefined;
+};
+
+//SortFetchParams
+export type SortFetchParams = {
+  type?: string;
+  page?: number;
+};
+
+//Form
+export type Form = {
+  username: string;
+  email: string;
+  phone?: string;
+  feedback: string;
 };

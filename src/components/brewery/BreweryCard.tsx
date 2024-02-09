@@ -7,8 +7,9 @@ import {
   Box,
 } from "@mui/material";
 import PlaceIcon from "@mui/icons-material/Place";
-import { BreweryCardProps } from "../../misc/type";
 import { Link } from "react-router-dom";
+
+import { BreweryCardProps } from "../../misc/type";
 
 const BreweryCard = ({ brewery }: BreweryCardProps) => {
   return (

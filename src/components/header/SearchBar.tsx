@@ -10,14 +10,15 @@ import {
   Alert,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+
 import { Data, SearchBarProps } from "../../misc/type";
-import useFetchbyName from "../../hook/useFetchbyName";
+import useFetchByName from "../../hook/useFetchByName";
 
 const SearchBar = ({ onSearch }: SearchBarProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<Data[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const { data: suggestionsData, loading, error } = useFetchbyName(searchQuery);
+  const { data: suggestionsData, loading, error } = useFetchByName(searchQuery);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
@@ -71,11 +72,10 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
     <Box
       sx={{
         display: "flex",
-        flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "center",
         maxWidth: "250px",
-        padding: 2,
+        position: "relative",
       }}
     >
       <TextField
@@ -95,29 +95,30 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
         }}
       />
       {showSuggestions && suggestions.length > 0 && (
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <List
-            sx={{
-              maxHeight: "calc(50vh - 30px)",
-              overflowY: "auto",
-              background: "white",
-              border: "1px solid #ccc",
-              padding: 1,
-            }}
-          >
-            {suggestions.map(renderSuggestion)}
-            {loading && (
-              <Alert variant="outlined" severity="info">
-                Loading suggestions...
-              </Alert>
-            )}
-            {error && (
-              <Alert variant="outlined" severity="error">
-                Error fetching suggestions: {error}
-              </Alert>
-            )}
-          </List>
-        </Box>
+        <List
+          sx={{
+            maxHeight: "calc(50vh - 30px)",
+            overflowY: "auto",
+            background: "white",
+            border: "1px solid #ccc",
+            padding: 1,
+            position: "absolute",
+            zIndex: 1,
+            top: "5rem",
+          }}
+        >
+          {suggestions.map(renderSuggestion)}
+          {loading && (
+            <Alert variant="outlined" severity="info">
+              Loading suggestions...
+            </Alert>
+          )}
+          {error && (
+            <Alert variant="outlined" severity="error">
+              Error fetching suggestions: {error}
+            </Alert>
+          )}
+        </List>
       )}
     </Box>
   );

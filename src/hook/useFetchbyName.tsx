@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import axios, { AxiosError, AxiosResponse } from "axios";
+
 import { Data } from "../misc/type";
 
-const useFetchbyName = (name: string) => {
+const useFetchByName = (name: string) => {
   const [data, setData] = useState<Data[]>([]);
   const [loading, setIsLoading] = useState(true);
   const [error, setIsError] = useState("");
@@ -23,4 +24,4 @@ const useFetchbyName = (name: string) => {
   return { data, loading, error };
 };
 
-export default useFetchbyName;
+export default useFetchByName;

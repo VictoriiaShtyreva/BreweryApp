@@ -1,5 +1,6 @@
-import { Props } from "../../misc/type";
 import { Box, Grid } from "@mui/material";
+
+import { Props } from "../../misc/type";
 import BreweryCard from "./BreweryCard";
 
 const BreweryList = ({ breweries }: Props) => {
